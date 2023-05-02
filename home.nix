@@ -70,6 +70,9 @@ in {
     shellAliases = {
       ls = "ls -G";
     };
+    sessionVariables = {
+      GIT_PS1_SHOWDIRTYSTATE = 1;
+    };
     bashrcExtra = ''
 # turn off terminal stop ctl-s
 stty -ixon
@@ -91,9 +94,8 @@ source $HOME/.nix-profile/share/git/contrib/completion/git-completion.bash
 # There are many like it, but this one is mine.
 # I can't seem to get this to work in the sessionVariables section
 source $HOME/.nix-profile/share/git/contrib/completion/git-prompt.sh
-export GIT_SHOWDIRTYSTATE=1
-# PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]$(__git_ps1 " (%s)")\$\[\e[m\] \[\e[1;37m\]'
-PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;37m\]'
+PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]$(__git_ps1 " (%s)")\$\[\e[m\] \[\e[1;37m\]'
+# PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;37m\]'
 # I prefer an empty PS2 for ease of copy paste
 PS2=""
 '';
