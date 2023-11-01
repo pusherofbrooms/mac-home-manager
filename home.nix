@@ -14,37 +14,73 @@ in {
   home.homeDirectory = "/Users/Jorgensen";
 
   home.stateVersion = "22.11";
-  home.packages = [
-    pkgs.autoconf
-    pkgs.autogen
-    pkgs.automake
-    pkgs.awscli2
-    pkgs.bash-completion
-    pkgs.bashInteractive
-    pkgs.bats
-    pkgs.bottom
+  home.packages = with pkgs; [
+    autoconf
+    autogen
+    automake
+    awscli2
+    bash-completion
+    bashInteractive
+    bats
+    bottom
     hsp-bosh-cli
-    pkgs.cloudfoundry-cli
-    pkgs.credhub-cli
-    pkgs.direnv
-    pkgs.dos2unix
-    pkgs.fzf
-    pkgs.gawk
-    pkgs.getopt
-    pkgs.git
-    pkgs.git-lfs
-    pkgs.gnupg
-    pkgs.htop
-    pkgs.jq
-    pkgs.kubectl
-    pkgs.nmap
-    pkgs.pwgen
-    pkgs.R
-    pkgs.ripgrep
-    pkgs.terraform
-    pkgs.tree
-    pkgs.wget
-    pkgs.yq
+    cloudfoundry-cli
+    credhub-cli
+    direnv
+    dos2unix
+    fzf
+    gawk
+    getopt
+    git
+    git-lfs
+    gnupg
+    htop
+    jq
+    keepassxc
+    kubectl
+    nmap
+    pwgen
+    R
+    ripgrep
+    terraform
+    tree
+    wget
+    yq
+
+    ((emacsPackagesFor emacs-git).emacsWithPackages (epkgs: [
+      epkgs.auto-complete
+      epkgs.company
+      epkgs.company-quickhelp
+      epkgs.counsel
+      epkgs.csv-mode
+      epkgs.direnv
+      epkgs.exec-path-from-shell
+      epkgs.flycheck
+      epkgs.flycheck-irony
+      epkgs.irony-eldoc
+      epkgs.js2-mode
+      epkgs.magit
+      epkgs.markdown-mode
+      epkgs.multi-vterm
+      epkgs.nix-mode
+      epkgs.org-ai
+      epkgs.platformio-mode
+      epkgs.popup
+      epkgs.projectile
+      epkgs.rust-mode
+      epkgs.toml-mode
+      epkgs.vterm
+      epkgs.yaml-mode
+      epkgs.yasnippet
+      epkgs.yasnippet-snippets
+      epkgs.web-mode
+      # The nixpkgs irony package seems to function ok.
+      # emacsPackages.irony
+      # emacsPackages.platformio-mode
+      # emacsPackages.irony-eldoc
+      # emacsPackages.flycheck-irony
+      # emacsPackages.company-irony
+    ]))
   ];
 
   home.file = {

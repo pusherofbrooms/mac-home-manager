@@ -10,12 +10,13 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { nixpkgs, home-manager, emacs-overlay, ... }:
     let
       system = "aarch64-darwin";
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
+        overlays = [ emacs-overlay.overlay ];
       };
     in {
       homeConfigurations.Jorgensen = home-manager.lib.homeManagerConfiguration {
