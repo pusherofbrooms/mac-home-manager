@@ -59,6 +59,7 @@ in {
       epkgs.flycheck-irony
       epkgs.irony-eldoc
       epkgs.js2-mode
+      epkgs.gptel
       epkgs.magit
       epkgs.markdown-mode
       epkgs.multi-vterm
