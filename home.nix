@@ -42,6 +42,7 @@ in {
     pwgen
     R
     ripgrep
+    slack
     terraform
     tree
     wget
