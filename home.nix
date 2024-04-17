@@ -92,15 +92,8 @@ in {
     "$HOME/.rd/bin"
     "$HOME/.cargo/bin"
     "$HOME/bin"
-    "/opt/homebrew/bin"
   ];
   
-  home.sessionVariables = {
-    # EDITOR = "emacs";
-    CPATH = "/opt/homebrew/include/";
-    LIBRARY_PATH = "/opt/homebrew/lib";
-  };
-
   programs.bash = {
     enable = true;
     enableCompletion = true;
