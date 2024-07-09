@@ -71,7 +71,6 @@ in {
       epkgs.popup
       epkgs.projectile
       epkgs.rust-mode
-      epkgs.slack
       epkgs.toml-mode
       epkgs.vterm
       epkgs.yaml-mode
