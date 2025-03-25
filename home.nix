@@ -15,6 +15,7 @@ in {
 
   home.stateVersion = "22.11";
   home.packages = with pkgs; [
+    aider-chat
     autoconf
     autogen
     automake
@@ -49,6 +50,7 @@ in {
     yq
 
     ((emacsPackagesFor emacs-git).emacsWithPackages (epkgs: [
+      epkgs.aidermacs
       epkgs.auto-complete
       epkgs.company
       epkgs.company-irony
@@ -72,6 +74,7 @@ in {
       epkgs.projectile
       epkgs.rust-mode
       epkgs.toml-mode
+      epkgs.transient
       epkgs.vterm
       epkgs.yaml-mode
       epkgs.yasnippet
