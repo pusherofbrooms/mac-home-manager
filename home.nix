@@ -7,9 +7,6 @@ let   hsp-bosh-cli = pkgs.bosh-cli.overrideAttrs (oldAttrs: rec {
             substituteInPlace vendor/github.com/cloudfoundry/config-server/types/certificate_generator.go --replace '(365' '(1095'
           '';
       });
-      aider-chat-latest = pkgs.aider-chat.overrideAttrs (oldAttrs: rec {
-        version = "0.79.0";
-      });
 
 in {
   
@@ -18,7 +15,7 @@ in {
 
   home.stateVersion = "22.11";
   home.packages = with pkgs; [
-    aider-chat-latest
+    aider-chat
     autoconf
     autogen
     automake
