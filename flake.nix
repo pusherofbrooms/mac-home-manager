@@ -16,7 +16,18 @@
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
-        overlays = [ emacs-overlay.overlay ];
+        overlays = [
+          emacs-overlay.overlay
+          (final: prev: {
+            emacs-git = prev.emacs-git.overrideAttrs (_old: {
+              src = final.fetchgit {
+                url = "https://git.savannah.gnu.org/git/emacs.git";
+                rev = "98c28606d2a67ceab4c6cb03a17eb756e809b31b";
+                sha256 = "18ah19lcnvbmjyaj4r56l1wy9sqklwj60djwkyam0bhlky23bkvj";
+              };
+            });
+          })
+        ];
       };
     in {
       homeConfigurations.Jorgensen = home-manager.lib.homeManagerConfiguration {

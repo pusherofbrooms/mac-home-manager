@@ -15,7 +15,6 @@ in {
 
   home.stateVersion = "22.11";
   home.packages = with pkgs; [
-    aider-chat
     autoconf
     autogen
     automake
@@ -41,16 +40,13 @@ in {
     kubectl
     nmap
     pwgen
-    R
     ripgrep
     slack
-    terraform
     tree
     wget
     yq
 
     ((emacsPackagesFor emacs-git).emacsWithPackages (epkgs: [
-      epkgs.aidermacs
       epkgs.auto-complete
       epkgs.company
       epkgs.company-irony
@@ -80,12 +76,6 @@ in {
       epkgs.yasnippet
       epkgs.yasnippet-snippets
       epkgs.web-mode
-      # The nixpkgs irony package seems to function ok.
-      # emacsPackages.irony
-      # emacsPackages.platformio-mode
-      # emacsPackages.irony-eldoc
-      # emacsPackages.flycheck-irony
-      # emacsPackages.company-irony
     ]))
   ];
 
