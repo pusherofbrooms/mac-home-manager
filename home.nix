@@ -15,6 +15,7 @@ in {
 
   home.stateVersion = "22.11";
   home.packages = with pkgs; [
+    acli
     autoconf
     autogen
     automake
