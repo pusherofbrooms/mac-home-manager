@@ -38,6 +38,7 @@ in {
     htop
     jq
     keepassxc
+    kitty
     kubectl
     nmap
     pwgen
@@ -131,6 +132,26 @@ PS2=""
     enable = true;
     enableBashIntegration = true;
   };
-  
+
+  programs.kitty = {
+    enable = true;
+
+    settings = {
+      font_size = 18;
+
+      macos_option_as_alt = "yes";
+      copy_on_select = "yes";
+      enable_audio_bell = "no";
+      confirm_os_window_close = 0;
+
+      tab_bar_min_tabs = 2;
+      tab_bar_edge = "top";
+      tab_bar_style = "separator";
+      tab_separator = " │ ";
+
+      window_padding_width = 4;
+    };
+  };
+
   programs.home-manager.enable = true;
 }
