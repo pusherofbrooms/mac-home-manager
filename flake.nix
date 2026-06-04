@@ -1,5 +1,5 @@
 {
-  description = "Home Manager configuration of Jorgensen";
+  description = "Home Manager configuration";
 
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
@@ -30,15 +30,27 @@
         ];
       };
     in {
-      homeConfigurations.Jorgensen = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-
-        # Specify your home configuration modules here, for example,
-        # the path to your home.nix.
-        modules = [ ./home.nix ];
-
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
+      homeConfigurations = {
+        Jorgensen = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [
+            ./home.nix 
+            {
+              home.username = "Jorgensen";
+              home.homeDirectory = "/Users/Jorgensen";
+            }
+          ];
+        };
+        jjorgens = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [
+            ./home.nix 
+            { 
+              home.username = "jjorgens";
+              home.homeDirectory = "/Users/jjorgens";
+            }
+          ];
+        };
       };
     };
 }

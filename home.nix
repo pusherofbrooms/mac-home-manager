@@ -10,9 +10,6 @@ let   hsp-bosh-cli = pkgs.bosh-cli.overrideAttrs (oldAttrs: rec {
 
 in {
   
-  home.username = "Jorgensen";
-  home.homeDirectory = "/Users/Jorgensen";
-
   home.stateVersion = "22.11";
   home.packages = with pkgs; [
     acli
