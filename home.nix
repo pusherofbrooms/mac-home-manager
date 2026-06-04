@@ -69,15 +69,18 @@ in {
       epkgs.org-tree-slide
       epkgs.platformio-mode
       epkgs.popup
+      epkgs.pos-tip
       epkgs.projectile
       epkgs.rust-mode
+      epkgs.swiper
       epkgs.toml-mode
       epkgs.transient
       epkgs.vterm
+      epkgs.web-mode
+      epkgs.with-editor
       epkgs.yaml-mode
       epkgs.yasnippet
       epkgs.yasnippet-snippets
-      epkgs.web-mode
     ]))
   ];
 
